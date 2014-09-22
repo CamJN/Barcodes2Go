@@ -14,6 +14,7 @@
 		D43C63A919D09BF40033CA4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43C63A819D09BF40033CA4D /* Images.xcassets */; };
 		D43C63AC19D09BF50033CA4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43C63AA19D09BF50033CA4D /* LaunchScreen.xib */; };
 		D43C63B819D09BF50033CA4D /* Barcodes2GoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43C63B719D09BF50033CA4D /* Barcodes2GoTests.m */; };
+		D43C63C219D09D3C0033CA4D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C63C119D09D3C0033CA4D /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D43C63B119D09BF50033CA4D /* Barcodes2GoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Barcodes2GoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43C63B619D09BF50033CA4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D43C63B719D09BF50033CA4D /* Barcodes2GoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Barcodes2GoTests.m; sourceTree = "<group>"; };
+		D43C63C119D09D3C0033CA4D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43C63C219D09D3C0033CA4D /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		D43C638F19D09BF40033CA4D = {
 			isa = PBXGroup;
 			children = (
+				D43C63C119D09D3C0033CA4D /* AVFoundation.framework */,
 				D43C639A19D09BF40033CA4D /* Barcodes2Go */,
 				D43C63B419D09BF50033CA4D /* Barcodes2GoTests */,
 				D43C639919D09BF40033CA4D /* Products */,
