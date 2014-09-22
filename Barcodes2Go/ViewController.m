@@ -30,21 +30,27 @@
     AVCaptureDevice *videoCaptureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error = nil;
     AVCaptureDeviceInput *videoInput = [AVCaptureDeviceInput deviceInputWithDevice:videoCaptureDevice error:&error];
-    if(videoInput)
+    if(videoInput){
         [self.captureSession addInput:videoInput];
-    else
+
+        AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];
+        [self.captureSession addOutput:metadataOutput];
+        NSArray* list = [metadataOutput availableMetadataObjectTypes];
+        if (list.count > 0) {
+            [metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+            [metadataOutput setMetadataObjectTypes:list];
+
+            AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
+            previewLayer.frame = self.view.layer.bounds;
+            [self.view.layer addSublayer:previewLayer];
+
+            [self.captureSession startRunning];
+        } else {
+             NSLog(@"Error: no supported barcode types");
+        }
+    }else{
         NSLog(@"Error: %@", error);
-    
-    AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];
-    [self.captureSession addOutput:metadataOutput];
-    [metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [metadataOutput setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code]];
-    
-    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
-    previewLayer.frame = self.view.layer.bounds;
-    [self.view.layer addSublayer:previewLayer];
-    
-    [self.captureSession startRunning];
+    }
 }
 
 #pragma mark AVCaptureMetadataOutputObjectsDelegate
