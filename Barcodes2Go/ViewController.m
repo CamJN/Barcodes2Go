@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.captureSession = [[AVCaptureSession alloc] init];
     AVCaptureDevice *videoCaptureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error = nil;
@@ -46,7 +46,7 @@
 
             [self.captureSession startRunning];
         } else {
-             NSLog(@"Error: no supported barcode types");
+            NSLog(@"Error: no supported barcode types");
         }
     }else{
         NSLog(@"Error: %@", error);
@@ -57,17 +57,16 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-    for(AVMetadataObject *metadataObject in metadataObjects)
+    for(AVMetadataMachineReadableCodeObject *metadataObject in metadataObjects)
     {
-        AVMetadataMachineReadableCodeObject *readableObject = (AVMetadataMachineReadableCodeObject *)metadataObject;
-        if([metadataObject.type isEqualToString:AVMetadataObjectTypeQRCode])
-        {
-            NSLog(@"QR Code = %@", readableObject.stringValue);
-        }
-        else if ([metadataObject.type isEqualToString:AVMetadataObjectTypeEAN13Code])
-        {
-            NSLog(@"EAN 13 = %@", readableObject.stringValue);
-        }
+        NSLog(@"Barcode = %@", metadataObject.stringValue);
+        NSLog(@"Type = %@", metadataObject.type);
+
+// CGRect highlightViewRect = CGRectZero;
+// AVMetadataMachineReadableCodeObject *barCodeObject = (AVMetadataMachineReadableCodeObject *)[self.preview transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+//        highlightViewRect = barCodeObject.bounds;
+//        self.highlightView.frame = highlightViewRect;
+//        [self.captureSession stopRunning];
     }
 }
 
