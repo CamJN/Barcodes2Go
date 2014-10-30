@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>148B8F02-33C0-44C7-92ED-031C00211ED8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Barcodes2Go</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>130D27D6623699366A92455A05A36960E0048D75</key>
+		<string>https://github.com/CamJN/Barcodes2Go.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Barcodes2Go.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>130D27D6623699366A92455A05A36960E0048D75</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CamJN/Barcodes2Go.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>130D27D6623699366A92455A05A36960E0048D75</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>130D27D6623699366A92455A05A36960E0048D75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Barcodes2Go</string>
+		</dict>
+	</array>
+</dict>
+</plist>
